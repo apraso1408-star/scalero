@@ -101,7 +101,19 @@
       padding: 5rem 1.5rem 3rem 1.5rem;
       max-width: 670px;
       margin: 0 auto;
+      animation: fadeIn 1s ease forwards;
     }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
     section.hero h1 {
       font-weight: 900;
