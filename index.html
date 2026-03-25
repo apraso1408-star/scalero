@@ -395,6 +395,47 @@
     }
 
     /* Responsive adjustments */
+
+    .image-section {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 4rem;
+      padding: 0 1rem;
+      position: relative;
+      max-width: 100%;
+    }
+
+    .image-container {
+      max-width: 800px;
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 30px rgba(34, 197, 94, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .image-container::before {
+      content: '';
+      position: absolute;
+      top: -15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 80%;
+      background: #22c55e;
+      filter: blur(30px);
+      opacity: 0.15;
+      border-radius: 24px;
+      z-index: -1;
+    }
+
+    .icon {
+      height: 28px;
+      width: 28px;
+      margin-bottom: 12px;
+    }
+  
     @media (max-width: 768px) {
       header.topbar {
         padding: 1rem 1.5rem;
@@ -485,18 +526,35 @@
   </ul>
 </section>
 
+<section class="image-section">
+  <div class="image-container">
+    <img src="https://user-images.githubusercontent.com/53400429/210465237-ae2e3889-3a5f-433d-9a8b-8f6c012c99a1.png" alt="Dashboard analytics UI" />
+  </div>
+</section>
+
 <section class="benefits">
   <h2>Hva du får</h2>
   <div class="benefit-cards">
-    <div class="ben-card">
+    <div class="ben-card card">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#22c55e" class="icon">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11 17a2 2 0 100-4 2 2 0 000 4z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12h-6m6 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
       <h3>Flere bookinger</h3>
       <p>Vi optimaliserer kundereisen slik at flere faktisk booker.</p>
     </div>
-    <div class="ben-card">
+    <div class="ben-card card">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#22c55e" class="icon">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
       <h3>Bedre synlighet</h3>
       <p>Vi sørger for at bedriften din blir sett der kundene er.</p>
     </div>
-    <div class="ben-card">
+    <div class="ben-card card">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#22c55e" class="icon">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a2 2 0 11-3.8 0M7 4v4m-4 4v2a4 4 0 108 0v-2m0 0v-4" />
+      </svg>
       <h3>Mindre manuelt arbeid</h3>
       <p>Automatisering sparer deg tid og gjør hverdagen enklere.</p>
     </div>
