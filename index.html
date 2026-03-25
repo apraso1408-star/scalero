@@ -14,6 +14,8 @@
       color: #e5e7eb;
       line-height: 1.6;
       display: flex;
+      overflow-x: hidden;
+    }
       flex-direction: column;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
@@ -396,24 +398,23 @@
 
     /* Responsive adjustments */
 
-    .image-section {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 4rem;
-      padding: 0 1rem;
-      position: relative;
-      max-width: 100%;
+    .image-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
     .image-container {
-      max-width: 800px;
+      max-width: 900px;
       width: 100%;
+      height: auto;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 25px rgba(34, 197, 94, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       position: relative;
       z-index: 1;
       margin: 0 auto;
+      display: block;
     }
 
     .image-container::before {
@@ -429,6 +430,16 @@
       opacity: 0.15;
       border-radius: 24px;
       z-index: -1;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
     }
 
     .icon {
@@ -527,7 +538,7 @@
   </ul>
 </section>
 
-<section class="image-section">
+<section class="image-wrapper">
   <div class="image-container">
     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Dashboard analytics UI" />
   </div>
