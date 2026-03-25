@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Scalero - Få flere kunder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     /* Reset and base styles */
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      background-color: #121212;
-      color: #fff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: #0a0a0a;
+      color: #e5e7eb;
       line-height: 1.6;
       display: flex;
       flex-direction: column;
@@ -20,7 +21,7 @@
     }
 
     a {
-      color: #1db954;
+      color: #22c55e;
       text-decoration: none;
     }
     a:hover {
@@ -28,20 +29,20 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
       width: 100%;
     }
 
-    /* Topbar/header */
+    /* Navbar */
     header.topbar {
-      background-color: #121212;
+      background-color: #0a0a0a;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #2a2a2a;
+      padding: 1rem 3rem;
+      border-bottom: 1px solid #161616;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -51,110 +52,177 @@
       font-weight: 900;
       font-size: 1.5rem;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: #1db954;
+      letter-spacing: 0.2em;
+      color: #22c55e;
       display: flex;
       flex-direction: column;
       line-height: 1.1;
+      font-family: 'Inter', sans-serif;
+      user-select: none;
     }
 
     header.topbar .tagline {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #9cdb9c;
-      margin-top: 4px;
-      letter-spacing: 0.03em;
+      color: #86efac;
+      margin-top: 3px;
+      letter-spacing: 0.04em;
+      user-select: none;
+      font-family: 'Inter', sans-serif;
     }
 
     header.topbar .btn {
-      background-color: #1db954;
-      color: #121212;
+      background-color: #22c55e;
+      color: #0a0a0a;
       border: none;
-      padding: 0.6rem 1.5rem;
-      font-size: 0.95rem;
+      padding: 0.6rem 1.8rem;
+      font-size: 1rem;
       font-weight: 700;
-      border-radius: 25px;
+      border-radius: 9999px;
       cursor: pointer;
       transition: background-color 0.3s ease;
       text-align: center;
-      display: inline-block;
       white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+      box-shadow: none;
+      outline: none;
     }
-    header.topbar .btn:hover {
-      background-color: #17a147;
+
+    header.topbar .btn:hover,
+    header.topbar .btn:focus {
+      background-color: #16a34a;
       text-decoration: none;
+      outline: none;
     }
 
     /* Hero Section */
     section.hero {
       text-align: center;
-      padding: 4rem 1rem 3rem 1rem;
-      max-width: 600px;
+      padding: 5rem 1.5rem 3rem 1.5rem;
+      max-width: 670px;
       margin: 0 auto;
     }
 
     section.hero h1 {
       font-weight: 900;
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color: #fff;
+      font-size: 3.75rem;
+      margin-bottom: 1.25rem;
+      color: #f9fafb;
       letter-spacing: 0.03em;
+      font-family: 'Inter', sans-serif;
     }
 
     section.hero p.subheadline {
       font-weight: 600;
-      font-size: 1.1rem;
-      color: #ddd;
-      margin-bottom: 1.5rem;
-      line-height: 1.4;
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+      font-family: 'Inter', sans-serif;
     }
 
     section.hero p.trust {
-      color: #1db954;
+      color: #22c55e;
       font-weight: 700;
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
+      margin-bottom: 3.25rem;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
     }
 
     section.hero .btn-primary {
-      background-color: #1db954;
-      color: #121212;
+      background-color: #22c55e;
+      color: #0a0a0a;
       border: none;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 30px;
+      padding: 1.2rem 3rem;
+      font-size: 1.25rem;
+      font-weight: 900;
+      border-radius: 9999px;
       cursor: pointer;
       transition: background-color 0.3s ease;
       display: inline-block;
       text-align: center;
-      margin-bottom: 0.5rem;
       white-space: nowrap;
+      font-family: 'Inter', sans-serif;
+      box-shadow: none;
+      outline: none;
     }
 
-    section.hero .btn-primary:hover {
-      background-color: #17a147;
+    section.hero .btn-primary:hover,
+    section.hero .btn-primary:focus {
+      background-color: #16a34a;
       text-decoration: none;
+      outline: none;
     }
 
     section.hero .btn-secondary-text {
-      font-size: 0.85rem;
-      color: #aaa;
+      font-size: 0.875rem;
+      color: #9ca3af;
       font-weight: 500;
+      margin-top: 0.75rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Trust Section */
+    section.trust-section {
+      max-width: 600px;
+      margin: 3rem auto 4rem auto;
+      text-align: center;
+      color: #e5e7eb;
+      padding: 0 1.5rem;
+    }
+
+    section.trust-section h2 {
+      font-weight: 800;
+      font-size: 1.875rem;
+      margin-bottom: 2rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    section.trust-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #d1fae5;
+      font-family: 'Inter', sans-serif;
+    }
+
+    section.trust-section ul li {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    section.trust-section ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-size: 2rem;
+      top: -0.35rem;
+      line-height: 1;
     }
 
     /* Benefits Section */
     section.benefits {
-      padding: 3rem 1rem;
-      max-width: 900px;
+      background: #121212;
+      padding: 3rem 1.5rem;
+      max-width: 960px;
       margin: 0 auto 4rem auto;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
     }
 
     section.benefits h2 {
       font-weight: 800;
-      font-size: 1.9rem;
+      font-size: 1.75rem;
       margin-bottom: 2rem;
-      color: #fff;
+      color: #e5e7eb;
+      font-family: 'Inter', sans-serif;
       text-align: center;
     }
 
@@ -166,31 +234,81 @@
     }
 
     .ben-card {
-      background-color: #1f1f1f;
-      border-radius: 12px;
-      padding: 2rem 1.5rem;
+      background-color: #1b1b1b;
+      border-radius: 1rem;
+      padding: 2.5rem 2rem;
       flex: 1 1 30%;
       box-shadow: none;
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: #e0e0e0;
-      min-width: 220px;
+      color: #f3f4f6;
+      min-width: 260px;
       text-align: center;
       font-weight: 600;
       font-size: 1.1rem;
       line-height: 1.4;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .ben-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 15px rgba(34, 197, 94, 0.35);
+    }
+
+    .ben-card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    /* How it works Section */
+    section.how-it-works {
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      padding: 0 1.5rem;
+      color: #d1d5db;
+      font-size: 1.05rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+    }
+
+    section.how-it-works h2 {
+      font-weight: 800;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #e5e7eb;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .step {
+      border-left: 4px solid #22c55e;
+      padding-left: 1rem;
+      color: #e5e7eb;
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      font-family: 'Inter', sans-serif;
     }
 
     /* About Section */
     section.about {
       max-width: 700px;
       margin: 0 auto 4rem auto;
-      padding: 0 1rem;
-      color: #ddd;
+      padding: 0 1.5rem;
+      color: #d1d5db;
       font-size: 1.1rem;
-      line-height: 1.6;
       font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
     }
 
     section.about h2 {
@@ -198,115 +316,123 @@
       font-size: 1.8rem;
       margin-bottom: 1rem;
       text-align: center;
-      color: #fff;
-    }
-
-    /* How it works Section */
-    section.how-it-works {
-      max-width: 700px;
-      margin: 0 auto 4rem auto;
-      padding: 0 1rem;
-      color: #ddd;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-
-    section.how-it-works h2 {
-      font-weight: 700;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #fff;
-    }
-
-    .steps {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .step {
-      background-color: #1f1f1f;
-      border-radius: 10px;
-      box-shadow: none;
-      flex: 1 1 30%;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      color: #ddd;
-      font-weight: 600;
-      font-size: 1rem;
-      min-width: 220px;
+      color: #f9fafb;
     }
 
     /* Final CTA Section */
     section.final-cta {
       background-color: #121212;
       text-align: center;
-      padding: 3rem 1rem 4rem 1rem;
-      color: #eee;
+      padding: 3rem 1.5rem 4rem 1.5rem;
+      color: #e5e7eb;
       max-width: 700px;
       margin: 0 auto 4rem auto;
     }
 
     section.final-cta h2 {
       font-weight: 900;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin-bottom: 1rem;
-      color: #fff;
+      color: #f9fafb;
+      font-family: 'Inter', sans-serif;
     }
 
     section.final-cta p {
-      color: #ccc;
+      color: #9ca3af;
       margin-bottom: 2rem;
       font-weight: 500;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       max-width: 450px;
       margin-left: auto;
       margin-right: auto;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
     }
 
     section.final-cta .btn {
-      font-size: 1.1rem;
-      padding: 1rem 2rem;
-      border-radius: 30px;
+      font-size: 1.25rem;
+      padding: 1.15rem 2.5rem;
+      border-radius: 9999px;
       font-weight: 700;
-      background-color: #1db954;
-      color: #121212;
+      background-color: #22c55e;
+      color: #0a0a0a;
       border: none;
       cursor: pointer;
       white-space: nowrap;
       transition: background-color 0.3s ease;
+      font-family: 'Inter', sans-serif;
+      box-shadow: none;
+      outline: none;
     }
 
-    section.final-cta .btn:hover {
-      background-color: #17a147;
+    section.final-cta .btn:hover,
+    section.final-cta .btn:focus {
+      background-color: #16a34a;
       text-decoration: none;
+      outline: none;
     }
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      section.benefits .benefit-cards,
-      section.how-it-works .steps {
-        flex-direction: column;
-      }
-
-      section.benefits .ben-card,
-      section.how-it-works .step {
-        flex: 1 1 100%;
-        max-width: 100%;
-      }
-
       header.topbar {
-        padding: 1rem;
+        padding: 1rem 1.5rem;
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 0.5rem;
         align-items: flex-start;
       }
-
       header.topbar .btn {
         width: 100%;
         text-align: center;
+      }
+
+      section.hero {
+        padding: 5rem 1.5rem 2.5rem 1.5rem;
+        max-width: 100%;
+      }
+
+      section.hero h1 {
+        font-size: 2.7rem;
+      }
+
+      section.trust-section ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      section.benefits .benefit-cards {
+        flex-direction: column;
+      }
+
+      section.benefits {
+        padding: 2rem 1rem;
+        max-width: 100%;
+      }
+
+      .ben-card {
+        padding: 1.75rem 1rem;
+      }
+
+      section.how-it-works {
+        max-width: 100%;
+        padding: 0 1rem;
+      }
+
+      section.how-it-works .steps {
+        max-width: 100%;
+      }
+
+      section.final-cta {
+        padding: 2.5rem 1rem 3rem 1rem;
+        max-width: 100%;
+      }
+
+      section.final-cta h2 {
+        font-size: 1.9rem;
+      }
+
+      section.final-cta .btn {
+        width: 100%;
+        padding: 1rem 1rem;
       }
     }
   </style>
@@ -314,19 +440,27 @@
 <body>
 
 <header class="topbar">
-  <div class="logo">
-    SCALERO
+  <div class="logo">SCALERO
     <div class="tagline">Flere kunder. Mindre friksjon.</div>
   </div>
   <a href="https://calendly.com/kontakt-scalero/30min" class="btn">Book gratis gjennomgang</a>
 </header>
 
 <section class="hero">
-  <h1>Få flere kunder til bedriften din</h1>
-  <p class="subheadline">Scalero hjelper lokale bedrifter i Kristiansand med nettside, booking og automatisering som faktisk skaper flere bookinger.</p>
+  <h1>Få flere kunder – uten å jobbe mer</h1>
+  <p class="subheadline">Vi hjelper lokale bedrifter med å få flere bookinger gjennom nettside, booking og automatisering.</p>
   <p class="trust">Gratis gjennomgang – ingen forpliktelser</p>
   <a href="https://calendly.com/kontakt-scalero/30min" class="btn-primary">Book gratis gjennomgang</a>
   <p class="btn-secondary-text">15 min • Google Meet</p>
+</section>
+
+<section class="trust-section">
+  <h2>Bygd for lokale bedrifter</h2>
+  <ul>
+    <li>Flere bookinger</li>
+    <li>Bedre synlighet</li>
+    <li>Mindre manuelt arbeid</li>
+  </ul>
 </section>
 
 <section class="benefits">
@@ -334,22 +468,17 @@
   <div class="benefit-cards">
     <div class="ben-card">
       <h3>Flere bookinger</h3>
-      <p>Vi hjelper deg med å øke antall bookingene dine ved å forbedre kundereisen.</p>
+      <p>Vi optimaliserer kundereisen slik at flere faktisk booker.</p>
     </div>
     <div class="ben-card">
       <h3>Bedre synlighet</h3>
-      <p>Optimalisering for Google og sosiale medier gjør at flere finner bedriften din.</p>
+      <p>Vi sørger for at bedriften din blir sett der kundene er.</p>
     </div>
     <div class="ben-card">
       <h3>Mindre manuelt arbeid</h3>
-      <p>Automatisering av rutiner sparer deg tid og lar deg fokusere på det som betyr noe.</p>
+      <p>Automatisering sparer deg tid og gjør hverdagen enklere.</p>
     </div>
   </div>
-</section>
-
-<section class="about">
-  <h2>Om Scalero</h2>
-  <p>Scalero hjelper små lokale bedrifter med å få flere kunder gjennom enkle digitale systemer. Vi bygger ikke bare nettsider – vi setter opp løsninger som gjør det lettere for kunder å finne deg, booke og komme tilbake.</p>
 </section>
 
 <section class="how-it-works">
@@ -361,9 +490,14 @@
   </div>
 </section>
 
+<section class="about">
+  <h2>Hva er Scalero?</h2>
+  <p>Scalero hjelper små lokale bedrifter med å få flere kunder gjennom enkle digitale systemer. Vi bygger ikke bare nettsider – vi lager løsninger som faktisk skaper vekst.</p>
+</section>
+
 <section class="final-cta">
   <h2>Klar for flere kunder?</h2>
-  <p>Book en gratis gjennomgang, så viser vi deg hva som kan forbedres i bedriften din.</p>
+  <p>Book en gratis gjennomgang, så viser vi deg hva som kan forbedres i din bedrift.</p>
   <a href="https://calendly.com/kontakt-scalero/30min" class="btn">Book gratis gjennomgang</a>
 </section>
 
