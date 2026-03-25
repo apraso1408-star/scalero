@@ -372,6 +372,16 @@
       outline: none;
     }
 
+    button, .btn, a.btn, a.btn-primary {
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    button:hover, .btn:hover, a.btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
       header.topbar {
