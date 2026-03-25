@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Scalero - Få flere kunder</title>
   <style>
+    /* Reset and base styles */
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       background-color: #121212;
-      color: #eee;
+      color: #fff;
       line-height: 1.6;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     a {
@@ -25,32 +27,96 @@
       text-decoration: underline;
     }
 
-    header,
-    section {
-      padding: 2rem 1rem;
+    .container {
       max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    /* Topbar/header */
+    header.topbar {
+      background-color: #121212;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #2a2a2a;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header.topbar .logo {
+      font-weight: 900;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #1db954;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    header.topbar .tagline {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #9cdb9c;
+      margin-top: 4px;
+      letter-spacing: 0.03em;
+    }
+
+    header.topbar .btn {
+      background-color: #1db954;
+      color: #121212;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    header.topbar .btn:hover {
+      background-color: #17a147;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    section.hero {
+      text-align: center;
+      padding: 4rem 1rem 3rem 1rem;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    header {
-      text-align: center;
-      margin-top: 4rem;
-    }
-
-    header h1 {
+    section.hero h1 {
+      font-weight: 900;
       font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #fff;
+      letter-spacing: 0.03em;
+    }
+
+    section.hero p.subheadline {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+
+    section.hero p.trust {
       color: #1db954;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
     }
 
-    header p {
-      font-size: 1.25rem;
-      margin-bottom: 1.8rem;
-      color: #ccc;
-    }
-
-    .btn {
+    section.hero .btn-primary {
       background-color: #1db954;
       color: #121212;
       border: none;
@@ -62,155 +128,248 @@
       transition: background-color 0.3s ease;
       display: inline-block;
       text-align: center;
+      margin-bottom: 0.5rem;
+      white-space: nowrap;
     }
-    .btn:hover {
+
+    section.hero .btn-primary:hover {
       background-color: #17a147;
+      text-decoration: none;
     }
 
-    section.services ul {
-      list-style: none;
-      padding: 0;
+    section.hero .btn-secondary-text {
+      font-size: 0.85rem;
+      color: #aaa;
+      font-weight: 500;
+    }
+
+    /* Benefits Section */
+    section.benefits {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: 0 auto 4rem auto;
+    }
+
+    section.benefits h2 {
+      font-weight: 800;
+      font-size: 1.9rem;
+      margin-bottom: 2rem;
+      color: #fff;
+      text-align: center;
+    }
+
+    .benefit-cards {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
       gap: 1.5rem;
-      margin-top: 2rem;
+      flex-wrap: wrap;
     }
 
-    section.services li {
-      background: #222;
-      padding: 1rem 1.5rem;
-      border-radius: 15px;
-      flex: 1 1 160px;
-      text-align: center;
-      font-weight: 600;
-      box-shadow: 0 0 10px #0e0e0e;
-      transition: transform 0.3s ease;
-    }
-    section.services li:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px #1db954;
-    }
-
-    section.how-it-works ol {
-      max-width: 600px;
-      margin: 2rem auto 0 auto;
-      counter-reset: step-counter;
-      padding-left: 0;
-      list-style: none;
-    }
-    section.how-it-works li {
-      background: #222;
-      margin-bottom: 1rem;
-      padding: 1rem 1.5rem;
-      font-weight: 600;
+    .ben-card {
+      background-color: #1f1f1f;
       border-radius: 12px;
-      position: relative;
-      counter-increment: step-counter;
-      box-shadow: 0 0 8px #0e0e0e;
-    }
-    section.how-it-works li::before {
-      content: counter(step-counter);
-      font-weight: 700;
-      color: #121212;
-      background: #1db954;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
+      padding: 2rem 1.5rem;
+      flex: 1 1 30%;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #e0e0e0;
+      min-width: 220px;
       text-align: center;
-      position: absolute;
-      left: -45px;
-      top: 50%;
-      transform: translateY(-50%);
-      box-shadow: 0 0 5px #0d772b;
-    }
-
-    section.social-proof {
-      text-align: center;
-      margin-top: 3rem;
       font-weight: 600;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    /* About Section */
+    section.about {
+      max-width: 700px;
+      margin: 0 auto 4rem auto;
+      padding: 0 1rem;
       color: #ddd;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-weight: 500;
     }
 
-    footer {
-      margin-top: auto;
-      padding: 1rem;
+    section.about h2 {
+      font-weight: 800;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
       text-align: center;
-      font-size: 0.9rem;
-      color: #555;
+      color: #fff;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      section.services ul {
+    /* How it works Section */
+    section.how-it-works {
+      max-width: 700px;
+      margin: 0 auto 4rem auto;
+      padding: 0 1rem;
+      color: #ddd;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    section.how-it-works h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .step {
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      box-shadow: none;
+      flex: 1 1 30%;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      color: #ddd;
+      font-weight: 600;
+      font-size: 1rem;
+      min-width: 220px;
+    }
+
+    /* Final CTA Section */
+    section.final-cta {
+      background-color: #121212;
+      text-align: center;
+      padding: 3rem 1rem 4rem 1rem;
+      color: #eee;
+      max-width: 700px;
+      margin: 0 auto 4rem auto;
+    }
+
+    section.final-cta h2 {
+      font-weight: 900;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    section.final-cta p {
+      color: #ccc;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    section.final-cta .btn {
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-weight: 700;
+      background-color: #1db954;
+      color: #121212;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+    }
+
+    section.final-cta .btn:hover {
+      background-color: #17a147;
+      text-decoration: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      section.benefits .benefit-cards,
+      section.how-it-works .steps {
         flex-direction: column;
-        gap: 1rem;
+      }
+
+      section.benefits .ben-card,
+      section.how-it-works .step {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      header.topbar {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+
+      header.topbar .btn {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
 
-<header style="background-color:#121212; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; max-width:900px; margin:0 auto">
-  <div>
-    <div style="font-weight:900; font-size:1.5rem; line-height:1; color:#1db954; text-transform:uppercase; letter-spacing:0.15em">SCALERO</div>
-    <div style="font-size:0.85rem; font-weight:600; color:#9cdb9c; letter-spacing:0.03em; margin-top:2px">Få flere kunder – automatisk</div>
+<header class="topbar">
+  <div class="logo">
+    SCALERO
+    <div class="tagline">Flere kunder. Mindre friksjon.</div>
   </div>
-  <a href="https://calendly.com/kontakt-scalero/30min" class="btn" style="padding:0.6rem 1.2rem; font-size:0.9rem; border-radius:25px;">Book gratis gjennomgang</a>
+  <a href="https://calendly.com/kontakt-scalero/30min" class="btn">Book gratis gjennomgang</a>
 </header>
 
-<header style="text-align:center; margin-top:1rem">
-  <h1>Få flere kunder til bedriften din – helt automatisk</h1>
-  <p>Vi hjelper lokale bedrifter i Kristiansand med å få flere kunder gjennom nettside, booking og automatisering.</p>
-  <p style="color:#1db954; font-weight:bold;">Gratis gjennomgang – ingen forpliktelser</p>
-  <a href="https://calendly.com/kontakt-scalero/30min" class="btn" target="_blank" rel="noopener">Book gratis gjennomgang</a>
-</header>
+<section class="hero">
+  <h1>Få flere kunder til bedriften din</h1>
+  <p class="subheadline">Scalero hjelper lokale bedrifter i Kristiansand med nettside, booking og automatisering som faktisk skaper flere bookinger.</p>
+  <p class="trust">Gratis gjennomgang – ingen forpliktelser</p>
+  <a href="https://calendly.com/kontakt-scalero/30min" class="btn-primary">Book gratis gjennomgang</a>
+  <p class="btn-secondary-text">15 min • Google Meet</p>
+</section>
 
-  <section class="about">
-    <h2>Hva er Scalero?</h2>
-    <p>Scalero hjelper små lokale bedrifter med å få flere kunder og øke omsetning gjennom digital optimalisering, automatisering og aktiv markedsføring. Vi selger ikke tjenester – vi selger resultater.</p>
-  </section>
+<section class="benefits">
+  <h2>Hva du får</h2>
+  <div class="benefit-cards">
+    <div class="ben-card">
+      <h3>Flere bookinger</h3>
+      <p>Vi hjelper deg med å øke antall bookingene dine ved å forbedre kundereisen.</p>
+    </div>
+    <div class="ben-card">
+      <h3>Bedre synlighet</h3>
+      <p>Optimalisering for Google og sosiale medier gjør at flere finner bedriften din.</p>
+    </div>
+    <div class="ben-card">
+      <h3>Mindre manuelt arbeid</h3>
+      <p>Automatisering av rutiner sparer deg tid og lar deg fokusere på det som betyr noe.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="services">
-    <h2>Hva vi hjelper med</h2>
-    <ul>
-      <li>Nettside</li>
-      <li>Bookingsystem</li>
-      <li>Google-profil optimalisering</li>
-      <li>Sosiale medier</li>
-      <li>Google Ads</li>
-      <li>AI-chatbot</li>
-      <li>Automatisk kundeoppfølging</li>
-      <li>Reputation management</li>
-    </ul>
-  </section>
+<section class="about">
+  <h2>Om Scalero</h2>
+  <p>Scalero hjelper små lokale bedrifter med å få flere kunder gjennom enkle digitale systemer. Vi bygger ikke bare nettsider – vi setter opp løsninger som gjør det lettere for kunder å finne deg, booke og komme tilbake.</p>
+</section>
 
-  <section class="how-it-works">
-    <h2>Hvordan det fungerer</h2>
-    <ol>
-      <li>Vi analyserer bedriften din</li>
-      <li>Vi setter opp systemene</li>
-      <li>Du får flere kunder</li>
-    </ol>
-  </section>
+<section class="how-it-works">
+  <h2>Slik fungerer det</h2>
+  <div class="steps">
+    <div class="step">1. Vi analyserer bedriften din</div>
+    <div class="step">2. Vi setter opp systemene</div>
+    <div class="step">3. Du får flere kunder</div>
+  </div>
+</section>
 
-  <section class="why-choose">
-    <h2>Hvorfor Scalero?</h2>
-    <p>Vi bruker AI og automatisering til å levere mer enn tradisjonelle byråer – til en brøkdel av prisen. Du betaler for resultater, ikke timer.</p>
-  </section>
+<section class="final-cta">
+  <h2>Klar for flere kunder?</h2>
+  <p>Book en gratis gjennomgang, så viser vi deg hva som kan forbedres i bedriften din.</p>
+  <a href="https://calendly.com/kontakt-scalero/30min" class="btn">Book gratis gjennomgang</a>
+</section>
 
-  <section class="cta" style="text-align:center; margin: 3rem 0;">
-    <h2>Klar for flere kunder?</h2>
-    <p>Book en gratis gjennomgang, så viser vi deg hva som kan forbedres i bedriften din.</p>
-    <a href="https://calendly.com/kontakt-scalero/30min" class="btn" target="_blank" rel="noopener">Book gratis gjennomgang</a>
-  </section>
+<footer style="text-align:center; padding: 1rem; color: #666; font-size: 0.9rem;">
+  &copy; 2026 Scalero - Alle rettigheter reservert
+</footer>
 
-  <footer>
-    &copy; 2026 Scalero - Alle rettigheter reservert
-  </footer>
 </body>
 </html>
